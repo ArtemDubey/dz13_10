@@ -119,12 +119,3 @@ if __name__ == '__main__':
 
 
 
-# db = sqlite3.connect("demo.db")
-# db.execute("CREATE TABLE IF NOT EXISTS notes (id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT NOT NULL)")
-# db.execute("INSERT INTO notes (title) VALUES (?)", ("Перша нотатка",))
-# db.commit()
-#
-# for row in db.execute("SELECT * FROM notes"):
-#     print(row)
-#
-# db.close()
