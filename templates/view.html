@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="note-view">
+    <h2 class="note-title" style="color: #fff; margin-bottom: 10px;">{{ note.title }}</h2>
+    <small class="note-date" style="display: block; margin-bottom: 20px; color: #777;">Створено: {{ note.created_at }}</small>
+    <p class="note-body" style="white-space: pre-line; color: #bbb; line-height: 1.6;">{{ note.body }}</p>
+    
+    <div style="margin-top: 30px; display: flex; gap: 10px;">
+        <a href="{{ url_for('edit', id=note.id) }}" class="btn-primary" style="background-color: #ffc107; color: #000; text-decoration: none;">Редагувати</a>
+        <a href="{{ url_for('index') }}" class="btn-primary btn-secondary" style="text-decoration: none;">Назад до списку</a>
+    </div>
+</div>
+{% endblock %}

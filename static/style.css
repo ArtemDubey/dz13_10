@@ -1,0 +1,195 @@
+/* Загальні налаштування */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Шапка сайту */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header h1 a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Форма пошуку та поля вводу */
+.search-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.form-input, .form-textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background: #2a2a2a;
+    color: #fff;
+    font-size: 16px;
+    box-sizing: border-box;
+    margin-top: 5px;
+}
+
+.form-textarea {
+    resize: vertical;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+}
+
+/* Кнопки дій */
+.btn-success {
+    background-color: #28a745;
+    color: white;
+}
+.btn-success:hover {
+    background-color: #218838;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+    text-decoration: none;
+}
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* Список нотаток */
+.notes-list {
+    list-style: none;
+    padding: 0;
+}
+
+.note-item {
+    background: #2a2a2a;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 6px;
+    border-left: 4px solid #007bff;
+}
+
+.note-title {
+    margin: 0 0 10px 0;
+    color: #fff;
+}
+
+.note-body {
+    margin: 0 0 10px 0;
+    color: #bbb;
+    white-space: pre-line;
+}
+
+.note-date {
+    color: #777;
+    font-size: 12px;
+}
+
+.no-notes {
+    text-align: center;
+    color: #777;
+    padding: 20px;
+}
+/* Стилі для сторінки помилки 404 */
+.error-container {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.error-code {
+    font-size: 72px;
+    margin: 0;
+    color: #ff4d4d;
+}
+
+.error-title {
+    font-size: 24px;
+    margin: 10px 0 20px 0;
+    color: #fff;
+}
+
+.error-text {
+    color: #aaa;
+    margin-bottom: 30px;
+}
+/* Стилі для кнопки видалення */
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+.btn-warning {
+    background-color: #ffc107;
+    color: #000;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.btn-warning:hover {
+    background-color: #e0a800;
+}

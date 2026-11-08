@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="error-container">
+    <h2 class="error-code">404</h2>
+    <h3 class="error-title">Сторінку не знайдено</h3>
+    <p class="error-text">тут пусто </p>
+    <a href="{{ url_for('index') }}" class="btn-primary">Повернутися на головну</a>
+</div>
+{% endblock %}

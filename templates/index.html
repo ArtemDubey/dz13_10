@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div>
+    <form method="GET" action="{{ url_for('index') }}" class="search-form">
+        <input
+            type="text"
+            name="q"
+            value="{{ q }}"
+            placeholder="Пошук нотаток..."
+            class="form-input"
+        >
+        <button type="submit" class="btn-primary" style="background-color: #444;">Шукати</button>
+        {% if q %}
+            <a href="{{ url_for('index') }}" class="btn-primary btn-secondary" style="display: flex; align-items: center; text-decoration: none;">Скинути</a>
+        {% endif %}
+    </form>
+</div>
+<div>
+    {% if notes %}
+        <ul class="notes-list">
+            {% for note in notes %}
+                <li class="note-item" style="position: relative; padding-bottom: 50px;">
+                    <h3 class="note-title">
+                        <a href="{{ url_for('view', id=note.id) }}" style="color: #fff; text-decoration: none;">{{ note.title }}</a>
+                    </h3>
+                    <p class="note-body">{{ note.body }}</p>
+                    <small class="note-date">Створено: {{ note.created_at }}</small>
+                    <div style="position: absolute; bottom: 15px; right: 15px; display: flex; gap: 8px;">
+                        <a href="{{ url_for('edit', id=note.id) }}" class="btn-warning" style="text-decoration: none; display: inline-flex; align-items: center;">Редагувати</a>
+
+                        <form action="{{ url_for('delete', id=note.id) }}" method="POST" style="margin: 0;">
+                            <button type="submit" class="btn-danger" onclick="return confirm('Ви впевнені, що хочете видалити цю нотатку?');">Видалити</button>
+                        </form>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p class="no-notes">Нотаток поки немає або нічого не знайдено за твоїм запитом.</p>
+    {% endif %}
+</div>
+{% endblock %}

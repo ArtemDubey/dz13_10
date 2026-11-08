@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div>
+    <h2>{% if note %}Редагувати нотатку{% else %}📝 Нова нотатка{% endif %}</h2>
+
+    <form method="POST">
+        <div class="form-group">
+            <label for="title">Заголовок:</label>
+            <input
+                type="text"
+                id="title"
+                name="title"
+                required
+                value="{% if note %}{{ note.title }}{% endif %}"
+                placeholder="Введіть заголовок..."
+                class="form-input"
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="body">Текст нотатки:</label>
+            <textarea
+                id="body"
+                name="body"
+                rows="8"
+                placeholder="Напишіть щось..."
+                class="form-input form-textarea"
+            >{% if note %}{{ note.body }}{% endif %}</textarea>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn-primary btn-success">{% if note %}Зберегти зміни{% else %}Зберегти{% endif %}</button>
+            <a href="{% if note %}{{ url_for('view', id=note.id) }}{% else %}{{ url_for('index') }}{% endif %}" class="btn-primary btn-secondary">Скасувати</a>
+        </div>
+    </form>
+</div>
+{% endblock %}
